@@ -14,4 +14,5 @@ import java.util.List;
 public interface UserService {
     public Boolean simpan(UserDetail u);
     public List<UserDetail> getAllUsers();
+    public Boolean deleteUser(String id);
 }

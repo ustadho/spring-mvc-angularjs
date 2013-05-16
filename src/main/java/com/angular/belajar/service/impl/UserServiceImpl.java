@@ -9,7 +9,6 @@ import com.angular.belajar.domain.UserDetail;
 import com.angular.belajar.service.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +30,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<UserDetail> getAllUsers() {
         return userDao.getAllUser();
+    }
+
+    @Override
+    public Boolean deleteUser(String id) {
+        return userDao.deleteUser(id);
     }
     
 }

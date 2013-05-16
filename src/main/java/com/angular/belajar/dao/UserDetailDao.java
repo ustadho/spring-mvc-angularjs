@@ -25,6 +25,14 @@ public class UserDetailDao {
     }
     
     public List<UserDetail> getAllUser(){
-        return sessionFactory.getCurrentSession().createQuery("select a from UserDetail a").list();
+        return sessionFactory.getCurrentSession().createQuery("from UserDetail").list();
+    }
+
+    public Boolean deleteUser(String userId) {
+        String hql= "delete UserDetail u where u.userId = :id";
+        int iDel=sessionFactory.getCurrentSession().createQuery(hql)
+                .setString("id", userId)
+                .executeUpdate();
+        return true;
     }
 }
